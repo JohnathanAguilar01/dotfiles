@@ -4,7 +4,6 @@
 export NVM_DIR="$HOME/.nvm"
 source /usr/share/nvm/init-nvm.sh
 
-eval "$(ssh-agent -s)"
 eval "$(starship init bash)"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
