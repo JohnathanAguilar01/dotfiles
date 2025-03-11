@@ -102,10 +102,10 @@ tooltip label {
   color: @on_surface;
 }
 #custom-weather {
-  border-radius: 24px 10px 24px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 #custom-swaync {
-  border-radius: 10px 24px 10px 24px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 /*---------------Tray, Clock, Playerctl, Battery, Cpu, Temperature, Colorpicker, Memory, Idle_inhibitor----------------------*/
@@ -131,14 +131,14 @@ tooltip label {
 #network,
 #battery {
   color: @on_surface;
-  border-radius: 10px 24px 10px 24px;
+  border-radius: 10px 10px 10px 10px;
   padding: 0 20px;
   margin-left: 7px;
 }
 #clock {
   color: @on_surface;
   background: @surface;
-  border-radius: 0px 0px 0px 40px;
+  border-radius: 5px 0px 0px 5px;
   padding: 10px 10px 15px 25px;
   margin-left: 7px;
   font-weight: bold;
@@ -169,7 +169,7 @@ tooltip label {
 }
 #custom-playerctl.backward {
   color: @primary;
-  border-radius: 24px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px;
   padding-left: 16px;
   margin-left: 7px;
 }
@@ -179,7 +179,7 @@ tooltip label {
 }
 #custom-playerctl.foward {
   color: @primary;
-  border-radius: 0px 10px 24px 0px;
+  border-radius: 0px 10px 10px 0px;
   padding-right: 12px;
   margin-right: 7px;
 }
@@ -187,7 +187,7 @@ tooltip label {
   background: @surface;
   color: @on_surface;
   padding: 0 20px;
-  border-radius: 24px 10px 24px 10px;
+  border-radius: 10px 10px 10px 10px;
   margin: 5px 0;
   font-weight: bold;
 }
@@ -204,7 +204,7 @@ tooltip label {
   background: @surface;
   margin: 0px 5px 0px 0px;
   padding: 0px 35px 0px 15px;
-  border-radius: 0px 0px 40px 0px;
+  border-radius: 0px 5px 5px 0px;
   font-size: 28px;
 }
 
@@ -245,7 +245,7 @@ tooltip label {
 
 #cpu {
   color: @tertiary;
-  border-radius: 24px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px;
   padding-left: 16px;
   padding-right: 7px;
   margin-left: 7px;
@@ -261,7 +261,7 @@ tooltip label {
 
 #custom-colorpicker {
   color: @tertiary;
-  border-radius: 0px 10px 24px 0px;
+  border-radius: 0px 10px 10px 0px;
   padding-right: 12px;
   padding-left: 7px;
   margin-right: 7px;
