@@ -7,12 +7,14 @@
   // Choose the order of the modules
   "modules-left": [
     "user",
+    "pulseaudio",
     "wlr/taskbar"
   ],
   "modules-center": [
     "hyprland/workspaces"
   ],
   "modules-right": [
+    "network",
     "clock"
   ],
 
@@ -61,5 +63,35 @@
         "Firefox Web Browser": "Firefox",
         "Foot Server": "Terminal"
     }
-  }
+  },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "({signalStrength}%) ",
+        "format-ethernet": "",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "pulseaudio": {
+      "format": "{icon} {volume}",
+      "format-muted": "婢",
+      "on-click": "pavucontrol -t 3",
+      "on-click-middle": "~/.config/hypr/scripts/volumecontrol.sh -o m",
+      "on-scroll-up": "~/.config/hypr/scripts/volumecontrol.sh -o i",
+      "on-scroll-down": "~/.config/hypr/scripts/volumecontrol.sh -o d",
+      "tooltip-format": "{icon} {desc} // {volume}%",
+      "scroll-step": 5,
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      }
+    }
 }
