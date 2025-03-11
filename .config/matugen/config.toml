@@ -18,3 +18,8 @@ output_path = '~/.config/kitty/kitty-colors.conf'
 [templates.starship]
 input_path = '~/.config/matugen/templates/starship-colors.toml'
 output_path = '~/.config/starship.toml'
+
+# Rofi
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/rofi-colors.rasi'
