@@ -165,10 +165,10 @@ tooltip label {
 #custom-playerctl.backward:hover,
 #custom-playerctl.play:hover,
 #custom-playerctl.foward:hover {
-  color: @on_surface;
+  color: @tertiary;
 }
 #custom-playerctl.backward {
-  color: @tertiary;
+  color: @primary;
   border-radius: 24px 0px 0px 10px;
   padding-left: 16px;
   margin-left: 7px;
@@ -178,7 +178,7 @@ tooltip label {
   padding: 0 5px;
 }
 #custom-playerctl.foward {
-  color: @tertiary;
+  color: @primary;
   border-radius: 0px 10px 24px 0px;
   padding-right: 12px;
   margin-right: 7px;
@@ -200,7 +200,7 @@ tooltip label {
 
 /*-------------Launcher--------------*/
 #custom-launcher {
-  color: @on_tertiary_container;
+  color: @primary;
   background: @surface;
   margin: 0px 5px 0px 0px;
   padding: 0px 35px 0px 15px;
