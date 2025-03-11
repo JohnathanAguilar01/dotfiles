@@ -3,6 +3,12 @@ command = "swww"
 arguments = ["img", "--transition-type", "center"]
 set = true
 
+# Hyprland
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.conf'
+output_path = '~/.config/hypr/hyprland/colors.conf'
+post_hook = 'hyprctl reload'
+
 # Waybar
 [templates.waybar]
 input_path = '~/.config/matugen/templates/matugen-waybar.css'
