@@ -14,10 +14,11 @@
 # Dependices
 
 - Matugen
-- waybar
+- Waybar
 - SWWW
 - Rofi
 - kitty
+- Starship
 
 # TODO
 
@@ -26,9 +27,12 @@
 # Progress
 
 - [x] Hyprland
-- [ ] Hyprlock
+- [x] Starship
 - [x] Kitty
 - [x] Rofi
 - [x] Waybar
+- [x] SWWW
+- [ ] Hyprlock
 - [ ] Swaync
 - [ ] Wlogout
+- [ ] SDDM
