@@ -6,6 +6,7 @@ set -e
 
 # Get the directory of the current script
 BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
+source $BASE_DIR/setup-scripts/helper.sh
 
 # Check if running as root. If root, script will exit
 if [[ $EUID -eq 0 ]]; then
@@ -13,14 +14,9 @@ if [[ $EUID -eq 0 ]]; then
 	exit 1
 fi
 
-source $BASE_DIR/setup-scripts/helper.sh
-
 # Display ASCII art
 display_hello
 
-# Set the name of the log file to include the current date and time
-LOG="install-$(date +%d-%H%M%S).log"
-sleep 1
 
 # Print backup warning message
 printf "\n"

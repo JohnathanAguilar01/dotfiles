@@ -13,6 +13,10 @@ RESET=$(tput sgr0)
 # Get the directory of the current script
 BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")/../")
 
+# Set the name of the log file to include the current date and time
+LOG="$BASE_DIR/install-$(date +%d-%H%M%S).log"
+sleep 1
+
 # Function to display ASCII art
 display_hello() {
     cat << "EOF"
@@ -94,21 +98,37 @@ install_pacman() {
   done
 }
 
-# Function to run a script with retry and confirmation
+# Wrapper to run a setup script with prompt + optional retry
 run_script() {
   local script="$BASE_DIR/setup-scripts/$1"
   local description="$2"
-  read -n1 -rep "${CAT} Would you like to install $2? (y/n)" scriptinst
-  if [[ $scriptinst =~ ^[Yy]$ ]]; then
-    while ! bash "$script"; do
-      print_error "$description script failed."
-      read -n1 -rep "${CAT} Would you like to retry installing $2? (y/n)" retry
-      if [[ $retry =~ ^[Nn]$ ]]; then
-          return 1  # User chose not to retry
-      fi
-    done
-    print_success "\n$description completed successfully."
-  else
-      return 0  # User chose not to run the script
+
+  # sanity check
+  if [[ ! -f "$script" ]]; then
+    print_error "Missing script: $script"
+    return 1
   fi
+
+  local ans status
+  read -r -n1 -p "${CAT} Would you like to install ${description}? (y/n) " ans
+  echo
+  if [[ ! $ans =~ ^[Yy]$ ]]; then
+    print_success "Skipped ${description}."
+    return 0
+  fi
+
+  while :; do
+    bash -- "$script"
+    status=$?
+
+    if (( status == 0 )); then
+      print_success "${OK} - ${description} completed successfully."
+      return 0
+    fi
+
+    print_error "${description} failed (exit ${status})."
+    read -r -n1 -p "${CAT} Retry installing ${description}? (y/n) " ans
+    echo
+    [[ $ans =~ ^[Yy]$ ]] || return "$status"
+  done
 }
