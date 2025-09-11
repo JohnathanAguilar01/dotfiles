@@ -98,8 +98,8 @@ install_pacman() {
 run_script() {
   local script="$BASE_DIR/scripts/$1"
   local description="$2"
-  read -n1 -rep "${CAT} Would you like to install $2? (y/n)" script
-  if [[ $script =~ ^[Yy]$ ]]; then
+  read -n1 -rep "${CAT} Would you like to install $2? (y/n)" scriptinst
+  if [[ $scriptinst =~ ^[Yy]$ ]]; then
     while ! bash "$script"; do
       print_error "$description script failed."
       read -n1 -rep "${CAT} Would you like to retry installing $2? (y/n)" retry

@@ -61,7 +61,7 @@ run_script "aur.sh" "AUR Setup"
 clear
 
 # install dependenscies
-run_script "dependenscies.sh" "dependenscies setup"
+run_script "dependencies.sh" "dependenscies setup"
 
 #clear screen
 clear
