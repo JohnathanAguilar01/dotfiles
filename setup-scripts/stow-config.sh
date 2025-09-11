@@ -25,7 +25,8 @@ if [[ $DOT =~ ^[Yy]$ ]]; then
     fi
 
     # Go to dotfiles directory
-    cd ~/dotfiles/
+    cd "$BASE_DIR"
+    pwd
     
     # Run stow
     printf " Running stow...\n"
