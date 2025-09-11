@@ -109,6 +109,6 @@ run_script() {
     done
     print_success "\n$description completed successfully."
   else
-      return 1  # User chose not to run the script
+      return 0  # User chose not to run the script
   fi
 }
