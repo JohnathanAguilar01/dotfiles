@@ -29,6 +29,9 @@ display_hello() {
 EOF
 }
 
+# Check for AUR helper and install if not found
+ISAUR=$(command -v yay || command -v paru)
+
 # Function for installing packages
 install_package() {
   # checking if package is already installed
