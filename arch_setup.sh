@@ -192,15 +192,34 @@ install_pacman() {
 # Exit immediately if a command exits with a non-zero status.
 set -e 
 
-#clear screen
+# clear screen
 clear
 
-#install hyperland and dependencies
-install_pacman hyperland
-install_pacman wayland
-install_pacman wayland-protocols
-install_pacman kitty
+# install dependencies
+# Packages list
+PACKAGES=(
+    hyprland
+    wayland
+    wayland-protocols
+    kitty
+    matugen
+    waybar
+    swww
+    rofi
+    starship
+)
 
+# Loop through packages
+for pkg in "${PACKAGES[@]}"; do
+    read -n1 -rep "${CAT} Would you like to install $pkg? (y/n)" pkginst
+    if [[ $pkginst =~ ^[Yy]$ ]]; then
+        install_pacman "$pkg"
+    else
+        printf "${WARN} If $pkg not installed other features may not work./n"
+    fi
+done
+
+printf "${OK} All requested packages processed!/n"
 
 #clear screen
 clear
@@ -246,3 +265,37 @@ fi
 
 #clear screen
 clear
+
+read -n1 -rep "${CAT} Would you like to remove existing dotfiles an replace with stow dotfiles? (y/n)" DOT
+if [[ $DOT =~ ^[Yy]$ ]]; then
+  install_pacman stow
+  # Go to home directory
+  cd ~
+  
+  # Remove .bashrc if it exists
+  if [ -f ".bashrc" ]; then
+      printf " Removing existing .bashrc...\n"
+      rm .bashrc
+  else
+      printf " .bashrc not found, skipping removal."
+  fi
+  
+  # Remove .bashrc if it exists
+  if [ -f ".config" ]; then
+      printf " Removing existing .config dir...\n"
+      rm -rf .config
+  else
+      printf " .config not found, skipping removal."
+  fi
+
+  # Go to dotfiles directory
+  cd ~/dotfiles/
+  
+  # Run stow
+  printf " Running stow..."
+  stow .
+  
+  printf " ${OK} Stow has made sim link"
+else
+  printf "${NOTE} Existing dotfiles not deleted and replaced...\n"
+fi
