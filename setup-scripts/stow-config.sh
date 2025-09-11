@@ -29,8 +29,7 @@ if [[ $DOT =~ ^[Yy]$ ]]; then
     
     # Run stow
     printf " Running stow...\n"
-    stow .bashrc
-    stow .config/
+    stow bashrc config
     
     printf " ${OK} Stow has made sim link\n"
 
