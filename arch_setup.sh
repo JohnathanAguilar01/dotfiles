@@ -227,7 +227,7 @@ PACMAN_PACKAGES=(
     waybar
     swww
     rofi
-    nerd-fonts-jetbrains-mono
+    ttf-jetbrains-mono-nerd-font
     starship
 )
 
