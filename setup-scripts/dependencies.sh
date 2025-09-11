@@ -30,6 +30,7 @@ PACMAN_PACKAGES=(
     upower
     meson
     cmake
+    curl
     scdoc
     glib2-devel
     kitty

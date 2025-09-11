@@ -47,26 +47,31 @@ else
     exit
 fi
 
-#clear screen
+# clear screen
 clear
 
 # install AUR if not already installed
 run_script "aur.sh" "AUR Setup"
 
-#clear screen
+# clear screen
 clear
 
 # install dependenscies
 run_script "dependencies.sh" "dependenscies setup"
 
-#clear screen
+# clear screen
 clear
 
 # install hardware drivers
 run_script "hardware-drivers.sh" "install drivers"
 
-#clear screen
+# clear screen
 clear
 
 # use stow to sim link dotfiles
 run_script "stow-config.sh" "sim link dotfiles with stow"
+
+# clear screen
+
+# Intall nvim configs
+run_script "nvim.sh" "install neovim"
