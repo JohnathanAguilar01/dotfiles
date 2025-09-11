@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# sourcing the helper file
+BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")/../")
+source $BASE_DIR/setup-scripts/helper.sh
+
 # BLUETOOTH
 read -n1 -rep "${CAT} OPTIONAL - Would you like to install Bluetooth packages? (y/n)" inst4
 if [[ $inst4 =~ ^[Yy]$ ]]; then

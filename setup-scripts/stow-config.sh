@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# sourcing the helper file
+BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")/../")
+source $BASE_DIR/setup-scripts/helper.sh
+
 read -n1 -rep "${CAT} Would you like to remove existing dotfiles an replace with stow dotfiles? (y/n)" DOT
 if [[ $DOT =~ ^[Yy]$ ]]; then
     install_pacman stow

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# sourcing the helper file
+BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")/../")
+source $BASE_DIR/setup-scripts/helper.sh
+
 # install dependencies
 # Packages list
 PACMAN_PACKAGES=(
