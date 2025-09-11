@@ -96,7 +96,7 @@ install_pacman() {
 
 # Function to run a script with retry and confirmation
 run_script() {
-  local script="$BASE_DIR/scripts/$1"
+  local script="$BASE_DIR/setup-scripts/$1"
   local description="$2"
   read -n1 -rep "${CAT} Would you like to install $2? (y/n)" scriptinst
   if [[ $scriptinst =~ ^[Yy]$ ]]; then
