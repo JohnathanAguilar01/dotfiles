@@ -36,3 +36,4 @@
 - [ ] Swaync
 - [ ] Wlogout
 - [ ] SDDM
+- [ ] TMUX
