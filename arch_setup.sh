@@ -72,6 +72,18 @@ clear
 run_script "stow-config.sh" "sim link dotfiles with stow"
 
 # clear screen
+clear
 
 # Intall nvim configs
 run_script "nvim.sh" "install neovim"
+
+# clear screen
+clear
+
+# Update grub setting to see other os
+run_script "grub-os-prober.sh" "update GRUB to see other os's"
+
+# clear screen
+clear
+
+printf "\n${OK} Installation completed successfully"
