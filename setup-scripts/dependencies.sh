@@ -9,6 +9,7 @@ source $BASE_DIR/setup-scripts/helper.sh
 PACMAN_PACKAGES=(
     hyprland
     python
+    tmux
     wayland
     wayland-protocols
     gtkmm3
