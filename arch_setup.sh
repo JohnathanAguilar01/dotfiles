@@ -93,4 +93,23 @@ run_script "setup-ssh.sh" "set-up ssh for this device"
 # clear screen
 clear
 
+# setup ssh for device
+run_script "sddm.sh" "install SDDM and themes"
+
+# clear screen
+clear
+
+# proceed to set wallpaper
+read -n1 -rep "${CAT} Shall we proceed with installation (y/n) " wallpaper
+    echo
+if [[ $wallpaper =~ ^[Yy]$ ]]; then
+  cd $BASE_DIR
+  pwd
+  swww img wallpapers/minecraft-blocks.jpg
+  matugen image wallpapers/minecraft-blocks.jpg
+else
+  printf "\n${OK} Installation completed successfully"
+  sleep 2
+  exit
+fi
 printf "\n${OK} Installation completed successfully"

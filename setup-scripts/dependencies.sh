@@ -8,6 +8,7 @@ source $BASE_DIR/setup-scripts/helper.sh
 # Packages list
 PACMAN_PACKAGES=(
     hyprland
+    python
     wayland
     wayland-protocols
     gtkmm3
