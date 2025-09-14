@@ -1,11 +1,18 @@
 #!/bin/bash
 
+# sourcing the helper file
+BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")/../")
+source $BASE_DIR/setup-scripts/helper.sh
+
 # Path to GRUB config file
 GRUB_FILE="/etc/default/grub"
 
 # The line we want to add
 SETTING="GRUB_DISABLE_OS_PROBER=true"
 
+# installing os-prober
+install_pacman "os-prober"
+install_pacman "fuse3"
 # Check if line already exists
 if grep -q "^${SETTING}" "$GRUB_FILE"; then
     printf "\n${OK} Setting already exists in $GRUB_FILE\n"

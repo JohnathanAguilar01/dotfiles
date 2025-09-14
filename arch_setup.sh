@@ -3,6 +3,7 @@
 
 # Set the script to exit on error
 set -e
+clear
 
 # Get the directory of the current script
 BASE_DIR=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
@@ -82,6 +83,12 @@ clear
 
 # Update grub setting to see other os
 run_script "grub-os-prober.sh" "update GRUB to see other os's"
+
+# clear screen
+clear
+
+# setup ssh for device
+run_script "setup-ssh.sh" "set-up ssh for this device"
 
 # clear screen
 clear
