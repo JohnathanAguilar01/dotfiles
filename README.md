@@ -32,8 +32,8 @@
 - [x] Rofi
 - [x] Waybar
 - [x] SWWW
+- [x] SDDM
+- [x] TMUX
 - [ ] Hyprlock
 - [ ] Swaync
 - [ ] Wlogout
-- [ ] SDDM
-- [ ] TMUX
