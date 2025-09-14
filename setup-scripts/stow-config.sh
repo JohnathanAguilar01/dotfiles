@@ -16,6 +16,14 @@ if [[ $DOT =~ ^[Yy]$ ]]; then
         printf " .bashrc not found, skipping removal.\n"
     fi
     
+    # Remove .tmux.conf if it exists
+    if [ -f "$HOME/.tmux.conf" ]; then
+        printf " Removing existing .tmux.conf...\n"
+        rm "$HOME/.tmux.conf"
+    else
+        printf " .tmux.conf not found, skipping removal.\n"
+    fi
+    
     # Remove .config if it exists
     if [ -d "$HOME/.config" ]; then
         printf " Removing existing .config dir...\n"
@@ -31,14 +39,20 @@ if [[ $DOT =~ ^[Yy]$ ]]; then
     # Run stow
     printf " Running stow...\n"
     stow bashrc/
+    stow tmux.conf/
     stow config/
     
     printf " ${OK} Stow has made sim link\n"
 
-    # Reload bashrc and configs
+    # Reload bashrc, tmux.conf and configs
     if [ -f "$HOME/.bashrc" ]; then
         printf " Sourcing new .bashrc...\n"
         source "$HOME/.bashrc"
+    fi
+
+    if [ -f "$HOME/.tmux.conf" ]; then
+        printf " Sourcing new .tmux.conf...\n"
+        source "$HOME/.tmux.conf"
     fi
     
     if [ -f "$HOME/.config/hypr/hyprland.config" ]; then
