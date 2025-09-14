@@ -9,6 +9,7 @@ read -n1 -rep "${CAT} OPTIONAL - Would you like to install neovim? (y/n)" inst4
 if [[ $inst4 =~ ^[Yy]$ ]]; then
   cd $HOME
   git clone https://github.com/neovim/neovim.git
+  cd $HOME/neovim/
   git checkout v0.11.4
   make CMAKE_BUILD_TYPE=Release
   sudo make install
