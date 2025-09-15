@@ -103,6 +103,7 @@ clear
 read -n1 -rep "${CAT} Shall we proceed with setting wallpaper and color theme (y/n) " wallpaper
     echo
 if [[ $wallpaper =~ ^[Yy]$ ]]; then
+  hyprland
   cd $BASE_DIR
   pwd
   swww img wallpapers/minecraft-blocks.jpg

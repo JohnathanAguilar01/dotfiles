@@ -9,6 +9,8 @@ source $BASE_DIR/setup-scripts/helper.sh
 PACMAN_PACKAGES=(
     hyprland
     python
+    nodejs
+    npm
     tmux
     wayland
     wayland-protocols
@@ -49,7 +51,7 @@ AUR_PACKAGES=(
 
 # Loop through pacman packages
 for pkg in "${PACMAN_PACKAGES[@]}"; do
-    read -n1 -rep "${CAT} Would you like to install $pkg? (y/n)" pkginst
+    # read -n1 -rep "${CAT} Would you like to install $pkg? (y/n)" pkginst
     if [[ $pkginst =~ ^[Yy]$ ]]; then
         install_pacman "$pkg"
     else
