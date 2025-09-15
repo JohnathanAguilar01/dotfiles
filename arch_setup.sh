@@ -100,7 +100,7 @@ run_script "sddm.sh" "install SDDM and themes"
 clear
 
 # proceed to set wallpaper
-read -n1 -rep "${CAT} Shall we proceed with installation (y/n) " wallpaper
+read -n1 -rep "${CAT} Shall we proceed with setting wallpaper and color theme (y/n) " wallpaper
     echo
 if [[ $wallpaper =~ ^[Yy]$ ]]; then
   cd $BASE_DIR

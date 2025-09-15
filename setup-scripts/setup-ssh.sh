@@ -28,10 +28,10 @@ else
   ssh-add $HOME/.ssh/id_ed25519
 fi
 
-read -rp "Enter the name of the ssh device: " device_name
+# read -rp "Enter the name of the ssh device: " device_name
 gh auth login
-gh ssh-key add ~/.ssh/id_ed25519.pub --title "$device_name"
-ssh -T git@github.com
+# gh ssh-key add ~/.ssh/id_ed25519.pub --title "$device_name"
+ssh -T git@github.com || true
 
 
 
