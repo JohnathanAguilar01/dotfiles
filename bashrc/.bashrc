@@ -10,4 +10,5 @@ eval "$(starship init bash)"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias set-theme="$HOME/set-theme.sh"
 PS1='[\u@\h \W]\$ '

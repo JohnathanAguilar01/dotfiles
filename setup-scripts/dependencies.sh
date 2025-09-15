@@ -12,6 +12,9 @@ PACMAN_PACKAGES=(
     python
     nodejs
     npm
+    network-manager-applet
+    nm-connection-editor
+    dolphin
     tmux
     wayland
     wayland-protocols
